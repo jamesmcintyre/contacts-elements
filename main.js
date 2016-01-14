@@ -89,6 +89,8 @@ function showResults(arrtoshow){
     $newDOMresults.push($newResult);
   }
 
+  $('div[data="filter"]').removeAttr('id');
+  $('div[data="filter"]').addClass('fadein');
   $('.results').remove();
   $('#list-container').append($newDOMresults);
 }

@@ -16,7 +16,17 @@
 
 #filters {
   margin-top: 12px;
+  color: rgb(175, 175, 175);
   display: none;
+
+}
+
+.filtersshow {
+  margin-top: 10px;
+  color: rgb(199, 199, 199);
+  display: block;
+  font-style: oblique;
+  font-size: smaller;
 }
 
 #template {
