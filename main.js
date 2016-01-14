@@ -113,7 +113,6 @@ function addContact(newcontact) {
 
 
 function sortListName() {
-
   if (sortToggle === false){
     contactsArray = _.sortBy(contactsArray, ['firstname']);
     sortToggle = true;
@@ -122,12 +121,10 @@ function sortListName() {
     contactsArray = _.reverse(contactsArray, ['firstname']);
     sortToggle = false;
   }
-
   showResults(contactsArray);
 }
 
 function sortListCompany() {
-
   if (sortToggle === false){
     contactsArray = _.sortBy(contactsArray, ['company']);
     sortToggle = true;
@@ -136,11 +133,10 @@ function sortListCompany() {
     contactsArray = _.reverse(contactsArray, ['company']);
     sortToggle = false;
   }
-
   showResults(contactsArray);
 }
-function sortListEmail() {
 
+function sortListEmail() {
   if (sortToggle === false){
     contactsArray = _.sortBy(contactsArray, ['email']);
     sortToggle = true;
@@ -149,11 +145,10 @@ function sortListEmail() {
     contactsArray = _.reverse(contactsArray, ['email']);
     sortToggle = false;
   }
-
   showResults(contactsArray);
 }
-function sortListPhone() {
 
+function sortListPhone() {
   if (sortToggle === false){
     contactsArray = _.sortBy(contactsArray, ['phone']);
     sortToggle = true;
@@ -162,11 +157,10 @@ function sortListPhone() {
     contactsArray = _.reverse(contactsArray, ['phone']);
     sortToggle = false;
   }
-
   showResults(contactsArray);
 }
-function sortListAddress() {
 
+function sortListAddress() {
   if (sortToggle === false){
     contactsArray = _.sortBy(contactsArray, ['address']);
     sortToggle = true;
@@ -175,11 +169,11 @@ function sortListAddress() {
     contactsArray = _.reverse(contactsArray, ['address']);
     sortToggle = false;
   }
-
   showResults(contactsArray);
 }
-function sortListGroup() {
 
+
+function sortListGroup() {
   if (sortToggle === false){
     contactsArray = _.sortBy(contactsArray, ['group']);
     sortToggle = true;
@@ -188,6 +182,5 @@ function sortListGroup() {
     contactsArray = _.reverse(contactsArray, ['group']);
     sortToggle = false;
   }
-
   showResults(contactsArray);
 }
