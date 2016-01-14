@@ -5,18 +5,18 @@ function init() {
     $('#searchform').keyup(searchCall);
     $(document).on('click', '#delete-contact', removeContact);
     $(document).on('click', '#save-new', addContact);
-    $(document).on('click', '.name', sortListName);
-    $(document).on('click', '.company', sortListCompany);
-    $(document).on('click', '.email-addy', sortListEmail);
-    $(document).on('click', '.phone', sortListPhone);
-    $(document).on('click', '.address', sortListAddress);
-    $(document).on('click', '.group', sortListGroup);
+    $('div.results').on('click', '.name', sortListName);
     loadFromLocal(true);
 }
 
 var contactsArray = [];
 var $hideNoResultDiv = [];
-var sortToggle = false;
+var sortToggle1 = false;
+var sortToggle2 = false;
+var sortToggle3 = false;
+var sortToggle4 = false;
+var sortToggle5 = false;
+var sortToggle6 = false;
 
 
 
@@ -85,10 +85,16 @@ function showResults(arrtoshow){
     $newResult.find('.phone').text(contactsArray[i].phone);
     $newResult.find('.address').text(contactsArray[i].address);
     $newResult.find('.group').text(contactsArray[i].group);
+    $newResult.on('click', '.name', sortListName);
+    $newResult.on('click', '.company', sortListCompany);
+    $newResult.on('click', '.email-addy', sortListEmail);
+    $newResult.on('click', '.phone', sortListPhone);
+    $newResult.on('click', '.address', sortListAddress);
+    $newResult.on('click', '.group', sortListGroup);
 
     $newDOMresults.push($newResult);
   }
-
+  // $('div.results').on('click', '.name', sortListName);
   $('div[data="filter"]').removeAttr('id');
   $('div[data="filter"]').addClass('fadein');
   $('.results').remove();
@@ -115,74 +121,84 @@ function addContact(newcontact) {
 
 
 function sortListName() {
-  if (sortToggle === false){
+  if (sortToggle1 === false){
     contactsArray = _.sortBy(contactsArray, ['firstname']);
-    sortToggle = true;
+    sortToggle1 = true;
+    $('div[data="filter"] p').text('sort by Name A-Z');
   }
   else {
     contactsArray = _.reverse(contactsArray, ['firstname']);
-    sortToggle = false;
+    sortToggle1 = false;
+    $('div[data="filter"] p').text('Name Z-A');
   }
   showResults(contactsArray);
 }
 
 function sortListCompany() {
-  if (sortToggle === false){
+  if (sortToggle2 === false){
     contactsArray = _.sortBy(contactsArray, ['company']);
-    sortToggle = true;
+    sortToggle2 = true;
+    $('div[data="filter"] p').text('Co. A-Z');
   }
   else {
     contactsArray = _.reverse(contactsArray, ['company']);
-    sortToggle = false;
+    sortToggle2 = false;
+    $('div[data="filter"] p').text('Co. Z-A');
   }
   showResults(contactsArray);
 }
 
 function sortListEmail() {
-  if (sortToggle === false){
+  if (sortToggle3 === false){
     contactsArray = _.sortBy(contactsArray, ['email']);
-    sortToggle = true;
+    sortToggle3 = true;
+    $('div[data="filter"] p').text('email A-Z');
   }
   else {
     contactsArray = _.reverse(contactsArray, ['email']);
-    sortToggle = false;
+    sortToggle3 = false;
+    $('div[data="filter"] p').text('email Z-A');
   }
   showResults(contactsArray);
 }
 
 function sortListPhone() {
-  if (sortToggle === false){
+  if (sortToggle4 === false){
     contactsArray = _.sortBy(contactsArray, ['phone']);
-    sortToggle = true;
+    sortToggle4 = true;
+    $('div[data="filter"] p').text('phone A-Z');
   }
   else {
     contactsArray = _.reverse(contactsArray, ['phone']);
-    sortToggle = false;
+    sortToggle4 = false;
+    $('div[data="filter"] p').text('phone Z-A');
   }
   showResults(contactsArray);
 }
 
 function sortListAddress() {
-  if (sortToggle === false){
+  if (sortToggle5 === false){
     contactsArray = _.sortBy(contactsArray, ['address']);
-    sortToggle = true;
+    sortToggle5 = true;
+    $('div[data="filter"] p').text('address A-Z');
   }
   else {
     contactsArray = _.reverse(contactsArray, ['address']);
-    sortToggle = false;
+    sortToggle5 = false;
+    $('div[data="filter"] p').text('address Z-A');
   }
   showResults(contactsArray);
 }
 
 
 function sortListGroup() {
-  if (sortToggle === false){
+  if (sortToggle6 === false){
     contactsArray = _.sortBy(contactsArray, ['group']);
-    sortToggle = true;
+    sortToggle6 = true;
   }
   else {
     contactsArray = _.reverse(contactsArray, ['group']);
-    sortToggle = false;
+    sortToggle6 = false;
   }
   showResults(contactsArray);
 }
