@@ -96,7 +96,7 @@ function addContact(newcontact) {
     newContactOb.phone = $(this).closest('#newcontact').find('#phone').val();
     newContactOb.address = $(this).closest('#newcontact').find('#address').val();
     newContactOb.group = $(this).closest('#newcontact').find('#group').val();
-    newContactOb.image = ("prof0"+Math.floor(Math.random()*9)+".jpg");
+    newContactOb.image = ("person.jpg");
     contactsArray.unshift(newContactOb);
     localStorage.setItem("contacts", JSON.stringify(contactsArray));
     showResults(contactsArray);
