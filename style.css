@@ -1,5 +1,8 @@
 
 
+
+/*MAIN LAYOUT CSS*/
+
 #top-header {
   height: 3vmax;
 }
@@ -13,6 +16,11 @@
 
 #filters {
   margin-top: 12px;
+  display: none;
+}
+
+#template {
+  display: none;
 }
 
 .filteroptions {
@@ -20,7 +28,6 @@
   font-size: medium;
   text-align: right;
 }
-
 
 @media only screen and (max-width: 992px) {
   #side-panel {
@@ -46,29 +53,152 @@
 
 }
 
+#full-contain {
+  height: 80vh;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#title{
+  padding-left: 0px;
+}
+
+#title h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 6vmax;
+  color: #444444;
+  text-shadow: 3px 3px #cbcbcb;
+}
+
+
+
+
+
+
+/*SEARCH*/
+
 #search {
   background-color: white;
   height: 22%;
-  border-bottom: 2px solid rgb(142, 142, 142);
+  border-bottom: 3px solid rgb(234, 234, 234);
   position: relative;
 }
-
+/*INPUT STYLE FOR SEARCH*/
 input[type=text]#searchtext {
   border: 0px;
   width: 100%;
   font-size: 31pt;
   color: rgb(159, 159, 159);
-  margin-bottom: 0px;
+  margin-bottom: -12px;
   padding-bottom: 0px;
   bottom: 0;
   position: absolute;
+  z-index: 9;
+  background: none;
+}
+input[type=text]#searchtext:focus {
+  outline: none;
+  color: rgb(94, 94, 94);
 }
 
-input[type=text]#searchtext:focus {
+
+
+
+
+
+/*INPUT STYLE FOR NEW CONTACT*/
+
+input[type=text].nameinput {
+  border: 0px;
+  width: 45%;
+  font-size: xx-large;
+  color: rgb(159, 159, 159);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  display: inline;
+  background: none;
+}
+input[type=text].nameinput:focus {
   outline: none;
   color: rgb(208, 26, 201);
 }
 
+
+input[type=text].otherinput {
+  border: 0px;
+  width: 45%;
+  font-size: small;
+  color: rgb(159, 159, 159);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  display: inline;
+  background: none;
+}
+input[type=text].otherinput:focus {
+  outline: none;
+  color: rgb(208, 26, 201);
+}
+
+#message {
+  text-align: center;
+  font-size: normal;
+  margin-top: 14px;
+}
+
+#showon-noresult {
+  display: none;
+}
+
+.fadein {
+  animation: fadeInLoad 1s;
+}
+
+@keyframes fadeInLoad {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+  }
+
+
+
+.hidden {
+  display: none !important;
+}
+
+.showit {
+  display:block;
+}
+
+/*.newcontactli-noresult {
+  border: 2px solid rgb(236, 143, 143) !important;
+  background-color: #F2DEDE !important;
+}*/
+
+.newcontactli-nocontacts {
+  border: 2px solid rgb(124, 222, 149) !important;
+  background-color: #e0f2de !important;
+  margin: 0px;
+}
+
+#showon-nocontacts {
+  display: none;
+}
+
+
+#save-new {
+  margin-right: 4px;
+}
+
+
+
+
+
+
+
+/*STYLING FOR CONTACT TILES AND NEW FORM*/
 
 #list-container {
   width: 100%;
@@ -123,21 +253,11 @@ input[type=text]#searchtext:focus {
   color: rgb(139, 139, 139);
 }
 
-
-
-#full-contain {
-  height: 80vh;
-  padding-right: 0px;
-  padding-left: 0px;
+#delete-contact {
+  margin-right: 4px;
 }
 
-#title{
-  padding-left: 0px;
-}
-
-#title h1 {
-  font-family: 'Roboto Slab', serif;
-  font-size: 6vmax;
-  color: #444444;
-  text-shadow: 3px 3px #cbcbcb;
+#delete-contact:hover {
+  margin-right: 4px;
+  background-color: rgb(246, 115, 111);
 }

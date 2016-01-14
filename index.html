@@ -28,38 +28,166 @@
       </div>
       <div id="main-panel" class="col-md-10 col-sm-12">
         <div id="search">
-          <input type="text" name="" id="searchtext" placeholder="type your search...">
+          <form action="" id="searchform">
+          <input type="text" name="" autocomplete="off" id="searchtext" placeholder="type your search..." autofocus="true">
+          </form>
         </div>
+
         <div id="list-container" class="row">
-          <div class="contactli row">
+
+
+
+
+
+
+
+
+
+        <!-- NO CONTACTS IN STORAGE ADD NEW CONTACT FORM  -->
+
+        <div class="hidden">
+
+          <!-- THIS WILL BE SHOWN 1ST WHEN NO CONTACT IN STORAGE  -->
+          <div class="row">
+            <div id="message" class="col-xs-12 alert alert-success">
+              You have no contacts,<br>Add a New One Below!
+            </div>
+          </div>
+
+          <!-- THIS WILL BE SHOWN 1ST WHEN NO CONTACT IN STORAGE  -->
+
+          <div id="newcontact" class="contactli row newcontactli-nocontacts">
             <div class="photo-thumb col-xs-4">
               <img src="person.jpg" alt="">
             </div>
             <div class="info-group col-xs-8">
-              <div class="name col-xs-12">James McIntyre</div>
-                <div class="sub-info-group col-xs-12">
-                  <div class="company col-xs-12">Coding House</div>
-                      <div class="contact-info1 col-xs-6">
-                        <div class="email-addy">james@place.com</div>
-                        <div class="phone">(888)-123-4567</div>
-                      </div>
-                    <div class="contact-info2 col-xs-6">
-                    <div class="address">2000 The Other Road</div>
-                    <div class="group">Family</div>
-                  </div>
+              <div class="name col-xs-12">
+                <input type="text" class="nameinput" name="" id="firstname" placeholder="First Name">
+                <input type="text" class="nameinput" name="" id="lastname" placeholder="Last Name">
               </div>
+              <div class="sub-info-group col-xs-12">
+                <div class="company col-xs-12">
+                  <input type="text" class="otherinput" name="" id="company" placeholder="Company XYZ">
+                </div>
+                <div class="contact-info1 col-xs-6">
+                  <div class="email-addy">
+                    <input type="text" class="otherinput" name="" id="email" placeholder="youremail@email.com">
+                  </div>
+                  <div class="phone">
+                    <input type="text" class="otherinput" name="" id="phonenum" placeholder="(xxx)-xxx-xxxx">
+                  </div>
+                </div>
+                <div class="contact-info2 col-xs-6">
+                  <div class="address">
+                    <input type="text" class="otherinput" name="" id="address" placeholder="Address">
+                  </div>
+                  <div class="group">
+                    <input type="text" class="otherinput" name="" id="group" placeholder="Group">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" id="save-new" class="pull-right btn btn-success btn-sm"><span class="glyphicon glyphicon-plus-sign"></span></button>
+          </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- NO RESULT ADD NEW CONTACT FORM  -->
+
+          <div id="showon-noresult" data="noresults">
+
+            <!-- THIS WILL BE SHOWN 1ST WHEN NO RESULTS  -->
+            <div class="row">
+              <div id="message" class="col-xs-12 alert alert-danger">
+                No Contacts Found!<br>Add a New One Below!
+              </div>
+            </div>
+
+            <!-- THIS WILL BE SHOWN 1ST WHEN NO RESULTS  -->
+
+            <div id="newcontact" class="contactli row newcontactli-noresult">
+              <div class="photo-thumb col-xs-4">
+                <img src="person.jpg" alt="">
+              </div>
+              <div class="info-group col-xs-8">
+                <div class="name col-xs-12">
+                  <form action="" id="newcontactform">
+                  <input type="text" class="nameinput" name="" id="firstname" placeholder="First Name" autofocus>
+                  <input type="text" class="nameinput" name="" id="lastname" placeholder="Last Name">
+                </div>
+                <div class="sub-info-group col-xs-12">
+                  <div class="company col-xs-12">
+                    <input type="text" class="otherinput" name="" id="company" placeholder="Company XYZ">
+                  </div>
+                  <div class="contact-info1 col-xs-6">
+                    <div class="email-addy">
+                      <input type="text" class="otherinput" name="" id="email" placeholder="youremail@email.com">
+                    </div>
+                    <div class="phone">
+                      <input type="text" class="otherinput" name="" id="phonenum" placeholder="(xxx)-xxx-xxxx">
+                    </div>
+                  </div>
+                  <div class="contact-info2 col-xs-6">
+                    <div class="address">
+                      <input type="text" class="otherinput" name="" id="address" placeholder="Address">
+                    </div>
+                    <div class="group">
+                      <input type="text" class="otherinput" name="" id="group" placeholder="Group">
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <button type="button" id="save-new" class="pull-right btn btn-success btn-sm"><span class="glyphicon glyphicon-plus-sign"></span> Add</button>
             </div>
           </div>
 
-          <div class="contactli row"></div>
-          <div class="contactli row"></div>
-          <div class="contactli row"></div>
-          <div class="contactli row"></div>
-          <div class="contactli row"></div>
-          <div class="contactli row"></div>
-          <div class="contactli row"></div>
-          <div class="contactli row"></div>
+
+
+
+
+
+
+
+          <div class="contactli row" id="template">
+            <div class="photo-thumb col-xs-4">
+              <img id="photo" src="person.jpg" alt="">
+            </div>
+            <div class="info-group col-xs-8">
+              <div class="name col-xs-12">James McIntyre</div>
+              <div class="sub-info-group col-xs-12">
+                <div class="company col-xs-12">Coding House</div>
+                <div class="contact-info1 col-xs-6">
+                  <div class="email-addy">james@place.com</div>
+                  <div class="phone">(888)-123-4567</div>
+                </div>
+                <div class="contact-info2 col-xs-6">
+                  <div class="address">2000 The Other Road</div>
+                  <div class="group">Family</div>
+                </div>
+              </div>
+            </div>
+            <button type="button" id="delete-contact" class="pull-right btn btn-default btn-sm"><span id="delete-contact" class="glyphicon glyphicon-remove-circle"></span></button>
+          </div>
+
         </div>
+
+
+
+
+
       </div>
     </div>
   </div>
