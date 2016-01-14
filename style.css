@@ -1,16 +1,112 @@
 
+
+#top-header {
+  height: 3vmax;
+}
 #side-panel {
-  background-color: rgb(182, 78, 207);
+  height: 100%;
+}
+
+#top-space {
+  height: 22%;
+}
+
+#filters {
+  margin-top: 12px;
+}
+
+.filteroptions {
+  display: block;
+  font-size: medium;
+  text-align: right;
+}
+
+
+@media only screen and (max-width: 992px) {
+  #side-panel {
+    height: 20% !important;
+  }
+  #main-panel {
+    height: 80% !important;
+  }
+  #full-contain {
+    height: 70vh !important;
+  }
+  #top-space {
+    display: none;
+  }
+
 }
 
 #main-panel {
-  background-color: rgb(150, 235, 215);
+  background-color: white;
+  height: 100%;
+  padding: 0px;
+  overflow: hidden;
+
 }
 
 #search {
-  background-color: rgb(235, 113, 45);
+  background-color: white;
+  height: 22%;
+  border-bottom: 2px solid rgb(142, 142, 142);
+  position: relative;
+}
+
+input[type=text]#searchtext {
+  border: 0px;
+  width: 100%;
+  font-size: 31pt;
+  color: rgb(159, 159, 159);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  bottom: 0;
+  position: absolute;
+}
+
+input[type=text]#searchtext:focus {
+  outline: none;
+  color: rgb(208, 26, 201);
+}
+
+
+#list-container {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow: scroll;
+  height: 80%;
+}
+
+#list-container::-webkit-scrollbar {
+    display: none;
 }
 
 .contactli {
-  background-color: rgb(227, 227, 227);
+  border: 1px solid rgb(202, 202, 202);
+  height: 35%;
+  /* width: 100%; */
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  box-shadow: 1px 1px rgba(204, 204, 204, 0.77);
+  background-color: #FFFFFF;
+}
+
+#full-contain {
+  height: 80vh;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#title{
+  padding-left: 0px;
+}
+
+#title h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 6vmax;
+  color: #444444;
+  text-shadow: 3px 3px #cbcbcb;
 }

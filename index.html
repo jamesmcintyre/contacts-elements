@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Contacts</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="main.js"></script>
@@ -12,11 +13,30 @@
 
   <div class="container">
     <div id="top-header" class="row"></div>
-    <div id="full-contain" class="col-md-6 col-md-offset-3 col-sm-12">
-      <div id="side-panel" class="col-md-2 col-sm-12"></div>
-      <div id="main-panel" class="col-md-4 col-sm-12">
-        <div id="search"></div>
+    <div id="title" class="col-md-10 col-md-offset-1 col-sm-12">
+    </div>
+    <div id="full-contain" class="col-md-10 col-md-offset-1 col-sm-12">
+      <div id="side-panel" class="col-md-2 col-sm-12">
+        <div id="top-space" class="row"></div>
+        <div class="pull-right" id="filters">
+        <ul>
+        <li class="filteroptions"><p>Family</p></li>
+        <li class="filteroptions"><p>Friends</p></li>
+        <li class="filteroptions"><p>Work</p></li>
+      </ul>
+      </div>
+      </div>
+      <div id="main-panel" class="col-md-10 col-sm-12">
+        <div id="search">
+          <input type="text" name="" id="searchtext" placeholder="type your search...">
+        </div>
         <div id="list-container" class="row">
+          <div class="contactli row"></div>
+          <div class="contactli row"></div>
+          <div class="contactli row"></div>
+          <div class="contactli row"></div>
+          <div class="contactli row"></div>
+          <div class="contactli row"></div>
           <div class="contactli row"></div>
           <div class="contactli row"></div>
           <div class="contactli row"></div>
