@@ -84,7 +84,7 @@ input[type=text]#searchtext:focus {
 
 .contactli {
   border: 1px solid rgb(202, 202, 202);
-  height: 35%;
+  height: 155px;
   /* width: 100%; */
   margin-right: 5px;
   margin-left: 5px;
@@ -93,6 +93,37 @@ input[type=text]#searchtext:focus {
   box-shadow: 1px 1px rgba(204, 204, 204, 0.77);
   background-color: #FFFFFF;
 }
+
+.photo-thumb {
+  height: 100%;
+  overflow: hidden !important;
+  padding: 0px;
+  border-right: 1px solid #F3F3F3;
+}
+
+.photo-thumb img {
+  width: 100%;
+  margin-top: -12%;
+}
+
+.name {
+  font-size: xx-large;
+}
+
+.company {
+  margin-bottom: 2%;
+}
+
+.info-group {
+
+}
+
+.sub-info-group {
+  padding: 0px;
+  color: rgb(139, 139, 139);
+}
+
+
 
 #full-contain {
   height: 80vh;

@@ -2,17 +2,64 @@
 $( document ).ready(init);
 
 function init() {
-    $('#searchtext').keyup(addNewName);
+    loadFromLocal(true);
+    $('#searchtext').keyup(searchCall);
 
 
-    initList();
-    $('.listclass').on('dblclick', 'li', removeName);
+    // initList();
+    // $('.listclass').on('dblclick', 'li', removeName);
+}
+
+var contactsArray = [];
+
+//LOCAL STORAGE
+
+
+function loadFromLocal(reinit){
+  if(!localStorage.contacts){
+    localStorage.contacts = "[]";
+  }
+  if(reinit === true){
+    contactsArray = JSON.parse(localStorage.contacts);
+    console.log(contactsArray);
+  }
+  return JSON.parse(localStorage.contacts);
+}
+
+function saveToLocal(newName){
+  var namesArray = JSON.parse(localStorage.names);
+  namesArray.push(newName);
+  localStorage.setItem("names", JSON.stringify(namesArray));
+}
+
+function deleteFromLocal(index) {
+  var namesArray = JSON.parse(localStorage.names);
+  namesArray.splice(index, 1);
+  localStorage.setItem("names", JSON.stringify(namesArray));
 }
 
 
 
 
+
+
+
+
+
+
+
 //DOM INTERACTION
+
+
+function searchCall(formdata) {
+  formdata.preventDefault();
+  //console.log($('#searchtext').val());
+
+
+
+}
+
+
 
 function addNewName (formdata){
   formdata.preventDefault();
@@ -46,27 +93,3 @@ function initList() {
 //   });
 //   $nameList.append($names);
 // }
-
-
-
-
-//LOCAL STORE
-
-function saveToLocal(newName){
-  var namesArray = JSON.parse(localStorage.names);
-  namesArray.push(newName);
-  localStorage.setItem("names", JSON.stringify(namesArray));
-}
-
-function deleteFromLocal(index) {
-  var namesArray = JSON.parse(localStorage.names);
-  namesArray.splice(index, 1);
-  localStorage.setItem("names", JSON.stringify(namesArray));
-}
-
-function loadFromLocal(){
-  if(!localStorage.names){
-    localStorage.names = "[]";
-  }
-  return JSON.parse(localStorage.names);
-}
