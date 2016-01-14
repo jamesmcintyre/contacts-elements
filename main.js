@@ -5,11 +5,18 @@ function init() {
     $('#searchform').keyup(searchCall);
     $(document).on('click', '#delete-contact', removeContact);
     $(document).on('click', '#save-new', addContact);
+    $(document).on('click', '.name', sortListName);
+    $(document).on('click', '.company', sortListCompany);
+    $(document).on('click', '.email-addy', sortListEmail);
+    $(document).on('click', '.phone', sortListPhone);
+    $(document).on('click', '.address', sortListAddress);
+    $(document).on('click', '.group', sortListGroup);
     loadFromLocal(true);
 }
 
 var contactsArray = [];
 var $hideNoResultDiv = [];
+var sortToggle = false;
 
 
 
@@ -103,3 +110,84 @@ function addContact(newcontact) {
     $('#newcontactform').trigger("reset");
     $('div[data="noresults"]').attr('id', 'showon-noresult');
   }
+
+
+function sortListName() {
+
+  if (sortToggle === false){
+    contactsArray = _.sortBy(contactsArray, ['firstname']);
+    sortToggle = true;
+  }
+  else {
+    contactsArray = _.reverse(contactsArray, ['firstname']);
+    sortToggle = false;
+  }
+
+  showResults(contactsArray);
+}
+
+function sortListCompany() {
+
+  if (sortToggle === false){
+    contactsArray = _.sortBy(contactsArray, ['company']);
+    sortToggle = true;
+  }
+  else {
+    contactsArray = _.reverse(contactsArray, ['company']);
+    sortToggle = false;
+  }
+
+  showResults(contactsArray);
+}
+function sortListEmail() {
+
+  if (sortToggle === false){
+    contactsArray = _.sortBy(contactsArray, ['email']);
+    sortToggle = true;
+  }
+  else {
+    contactsArray = _.reverse(contactsArray, ['email']);
+    sortToggle = false;
+  }
+
+  showResults(contactsArray);
+}
+function sortListPhone() {
+
+  if (sortToggle === false){
+    contactsArray = _.sortBy(contactsArray, ['phone']);
+    sortToggle = true;
+  }
+  else {
+    contactsArray = _.reverse(contactsArray, ['phone']);
+    sortToggle = false;
+  }
+
+  showResults(contactsArray);
+}
+function sortListAddress() {
+
+  if (sortToggle === false){
+    contactsArray = _.sortBy(contactsArray, ['address']);
+    sortToggle = true;
+  }
+  else {
+    contactsArray = _.reverse(contactsArray, ['address']);
+    sortToggle = false;
+  }
+
+  showResults(contactsArray);
+}
+function sortListGroup() {
+
+  if (sortToggle === false){
+    contactsArray = _.sortBy(contactsArray, ['group']);
+    sortToggle = true;
+  }
+  else {
+    contactsArray = _.reverse(contactsArray, ['group']);
+    sortToggle = false;
+  }
+
+  showResults(contactsArray);
+}
